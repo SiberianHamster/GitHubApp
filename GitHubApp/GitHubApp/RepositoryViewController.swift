@@ -12,10 +12,17 @@ class RepositoryViewController: ViewController {
 
   @IBOutlet weak var SearchBar: UISearchBar!
   
+  @IBOutlet weak var repoTable: UITableView!
+  
+  var repositoryItems:[Repositories] = []
+  
     override func viewDidLoad() {
         super.viewDidLoad()
       
         SearchBar.delegate = self
+        self.repoTable.dataSource = self
+        repoTable.delegate = self
+      
 
         // Do any additional setup after loading the view.
     }
@@ -27,13 +34,34 @@ class RepositoryViewController: ViewController {
   
 
 }
+//Mark: RepositoryViewController TableViewDataSource
+extension RepositoryViewController: UITableViewDataSource{
+  
+  func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    let cell = repoTable.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
+    
+    return cell
+  }
+  
+  func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    return repositoryItems.count
+  }
+  
+}
 
+//Mark: RepositoryViewController TableViewDelegate
+extension RepositoryViewController: UITableViewDelegate{
+}
+
+//Mark: RepositoryViewController SearchBarDelegate
 extension RepositoryViewController: UISearchBarDelegate{
   
   func searchBarSearchButtonClicked(searchBar: UISearchBar) {
     println("Searching")
     
-    GithubServices.repositoriesForSearchTerm(SearchBar.text)
+    repositoryItems = GithubServices.repositoriesForSearchTerm(SearchBar.text)
+    println("repositoryItems \(repositoryItems.count)")
+    
   
   
 }

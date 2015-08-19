@@ -16,6 +16,8 @@
 		AE267F7A1B83890200309A37 /* GithubServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE267F791B83890200309A37 /* GithubServices.swift */; };
 		AE267F7C1B838B1A00309A37 /* RepositoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE267F7B1B838B1A00309A37 /* RepositoryViewController.swift */; };
 		AE267F821B83959100309A37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE267F811B83959100309A37 /* ViewController.swift */; };
+		AE32EFC01B839A6E00A5ED46 /* GithubJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32EFBF1B839A6E00A5ED46 /* GithubJSONParser.swift */; };
+		AE32EFC21B839B5700A5ED46 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32EFC11B839B5700A5ED46 /* Repositories.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +44,8 @@
 		AE267F791B83890200309A37 /* GithubServices.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubServices.swift; sourceTree = "<group>"; };
 		AE267F7B1B838B1A00309A37 /* RepositoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RepositoryViewController.swift; sourceTree = "<group>"; };
 		AE267F811B83959100309A37 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		AE32EFBF1B839A6E00A5ED46 /* GithubJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubJSONParser.swift; sourceTree = "<group>"; };
+		AE32EFC11B839B5700A5ED46 /* Repositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 				AE267F531B82FBEA00309A37 /* AppDelegate.swift */,
 				AE267F811B83959100309A37 /* ViewController.swift */,
 				AE267F571B82FBEA00309A37 /* Main.storyboard */,
+				AE32EFBF1B839A6E00A5ED46 /* GithubJSONParser.swift */,
+				AE32EFC11B839B5700A5ED46 /* Repositories.swift */,
 				AE267F7B1B838B1A00309A37 /* RepositoryViewController.swift */,
 				AE267F791B83890200309A37 /* GithubServices.swift */,
 				AE267F731B8387CD00309A37 /* MenuTableViewController.swift */,
@@ -226,6 +232,8 @@
 				AE267F741B8387CD00309A37 /* MenuTableViewController.swift in Sources */,
 				AE267F7A1B83890200309A37 /* GithubServices.swift in Sources */,
 				AE267F7C1B838B1A00309A37 /* RepositoryViewController.swift in Sources */,
+				AE32EFC01B839A6E00A5ED46 /* GithubJSONParser.swift in Sources */,
+				AE32EFC21B839B5700A5ED46 /* Repositories.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
