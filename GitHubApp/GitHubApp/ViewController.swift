@@ -10,6 +10,10 @@ import UIKit
 
 class ViewController: UIViewController {
 
+  @IBOutlet weak var repoName: UILabel!
+  
+  @IBOutlet weak var repoURL: UILabel!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     // Do any additional setup after loading the view, typically from a nib.

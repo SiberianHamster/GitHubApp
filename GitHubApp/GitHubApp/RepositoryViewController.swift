@@ -10,18 +10,20 @@ import UIKit
 
 class RepositoryViewController: ViewController {
 
+  
   @IBOutlet weak var SearchBar: UISearchBar!
   
   @IBOutlet weak var repoTable: UITableView!
   
-  var repositoryItems:[Repositories] = []
+  var repositoryItems = [Repositories]()
   
     override func viewDidLoad() {
         super.viewDidLoad()
       
         SearchBar.delegate = self
-        self.repoTable.dataSource = self
+        repoTable.dataSource = self
         repoTable.delegate = self
+      
       
 
         // Do any additional setup after loading the view.
@@ -38,8 +40,10 @@ class RepositoryViewController: ViewController {
 extension RepositoryViewController: UITableViewDataSource{
   
   func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-    let cell = repoTable.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! UITableViewCell
-    
+    let cell = repoTable.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! TableViewCell
+    let repo = self.repositoryItems[indexPath.row]
+    cell.repoName.text = repo.name
+    cell.repoURL.text = repo.repoURL
     return cell
   }
   
@@ -59,10 +63,16 @@ extension RepositoryViewController: UISearchBarDelegate{
   func searchBarSearchButtonClicked(searchBar: UISearchBar) {
     println("Searching")
     
-    repositoryItems = GithubServices.repositoriesForSearchTerm(SearchBar.text)
-    println("repositoryItems \(repositoryItems.count)")
-    
-  
-  
+    GithubServices.repositoriesForSearchTerm(SearchBar.text, completionHandler: { (aRepo) -> (Void) in
+   
+      NSOperationQueue.mainQueue().addOperationWithBlock({ () -> Void in
+        self.repositoryItems = aRepo
+      self.repoTable.reloadData()
+      println("repositories count \(self.repositoryItems.count)")
+      })
+      
+      
+      })
+
 }
 }

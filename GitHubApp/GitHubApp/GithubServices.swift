@@ -9,24 +9,26 @@
 import Foundation
 
 class GithubServices {
-  class func repositoriesForSearchTerm(searchTerm : String)->[Repositories]{
-    let baseURL = "http://localhost:3000"
+  
+  class func repositoriesForSearchTerm(searchTerm : String, completionHandler:([Repositories])->(Void)){
+    
+    let baseURL = "https://api.github.com/search/repositories"
     let finalURL = baseURL + "?q=\(searchTerm)"
     var somethingcool : [Repositories]=[]
     if let url = NSURL(string: finalURL){
       NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
         if let error = error{
-          println("error")
+          println("error: \(error)")
         }else if let httpResponse = response as? NSHTTPURLResponse{
+          println("response assignation successful: \(httpResponse.statusCode)")
+
          let Repo = GithubJSONParser.repositoryFromJSONData(data)
 
-          somethingcool = Repo!
-
+          completionHandler(Repo!)
+          
         }
       }).resume()
     }
-    println("returning somethingcool \(somethingcool.count)")
 
-  return somethingcool
   }
 }

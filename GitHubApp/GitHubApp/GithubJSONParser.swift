@@ -14,10 +14,12 @@ class GithubJSONParser{
     
     if let rootObject = NSJSONSerialization.JSONObjectWithData(jsonData, options: nil, error: &error) as? [ String : AnyObject ]{
       var repository = [Repositories]()
-      
+
       if let items = rootObject["items"] as? [[String : AnyObject]]
         {
+
           for item in items{
+            println("loop")
            if let repoName = item["name"] as? String,
            repoURL = item["html_url"] as? String
           {
@@ -25,10 +27,9 @@ class GithubJSONParser{
             repository.append(repo)
            
           }
-             println("jsoncount\(repository.count)")
-            return repository
-          
         }
+          println("jsoncount\(repository.count)")
+          return repository
       }
     }
   return nil}
