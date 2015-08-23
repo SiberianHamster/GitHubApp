@@ -31,8 +31,8 @@ class UserSearchViewController: UIViewController {
     if segue.identifier == "detailedUserSegue" {
       
         let destinationViewController = segue.destinationViewController as! DetailedUserViewController
-        let selectedUser = userCollection.indexPathForCell(UserCollectionViewCell)
-        let passedUser = usersItems[selectedUser.row]
+        let selectedUser = userCollection.indexPathsForSelectedItems().first as! NSIndexPath
+        let passedUser = usersItems[selectedUser.item]
         destinationViewController.selectedUser = passedUser
       
   }

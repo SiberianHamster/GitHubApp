@@ -14,6 +14,7 @@ class DetailedUserViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+      println(selectedUser.userHTMLURL)
       
       
 
