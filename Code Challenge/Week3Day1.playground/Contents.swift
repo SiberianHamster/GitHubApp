@@ -3,14 +3,16 @@
 
 import UIKit
 
-func giveMeExtremes<T>(randomArray:[T]) -> (T, T){
+func giveMeExtremes<T:Double, Int>(randomArray:[T]) -> (T, T){
   var lowest : T
   var highest : T
   highest = randomArray[0]
   lowest = randomArray[0]
+  println(lowest)
+  println(highest)
   
   for Elements in randomArray {
-    if Elements<lowest{lowest = Elements}
+    if (Elements) {lowest = Elements}
     else if Elements > highest{highest = Elements}
     else{}
   
@@ -18,8 +20,8 @@ func giveMeExtremes<T>(randomArray:[T]) -> (T, T){
   return (lowest, highest)
 }
 
-//var array = [12,1424,11,21,2,1,-123,0,-123,12.4,0.1]
-var array = [0]
+var array = [12,1424,11,21,2,1,-123,0,-123,12.4,0.1]
+//var array = [0]
 println(giveMeExtremes(array))
 
 

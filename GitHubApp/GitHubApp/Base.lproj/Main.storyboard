@@ -127,7 +127,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Oov-lR-dVZ">
                                 <rect key="frame" x="0.0" y="108" width="600" height="492"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="r3z-Nc-f2c">
-                                    <size key="itemSize" width="148" height="159"/>
+                                    <size key="itemSize" width="80" height="80"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
@@ -137,17 +137,26 @@
                                         <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="148" height="159"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2st-Cm-h7x">
-                                                    <rect key="frame" x="0.0" y="0.0" width="148" height="159"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2st-Cm-h7x">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="pJE-Xt-zQO"/>
+                                                        <constraint firstAttribute="width" constant="80" id="pWE-3A-tXW"/>
+                                                    </constraints>
                                                 </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <constraints>
+                                            <constraint firstItem="2st-Cm-h7x" firstAttribute="leading" secondItem="d7o-RK-iXS" secondAttribute="leadingMargin" constant="-8" id="RGa-aB-Hdo"/>
+                                            <constraint firstItem="2st-Cm-h7x" firstAttribute="top" secondItem="d7o-RK-iXS" secondAttribute="topMargin" constant="-8" id="fF7-cW-Mfw"/>
+                                        </constraints>
                                         <connections>
                                             <outlet property="image" destination="2st-Cm-h7x" id="Ocv-Bu-kbB"/>
+                                            <segue destination="F9s-l2-Vrg" kind="show" identifier="detailedUserSegue" id="32j-tH-vjP"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -172,6 +181,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eFf-pY-Tdp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1069" y="1131"/>
+        </scene>
+        <!--Detailed User View Controller-->
+        <scene sceneID="Dhn-Bj-Fkc">
+            <objects>
+                <viewController id="F9s-l2-Vrg" customClass="DetailedUserViewController" customModule="GitHubApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Duj-fL-e1d"/>
+                        <viewControllerLayoutGuide type="bottom" id="bNd-kf-DSO"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LQS-3s-XZF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x8x-kr-7dC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1760" y="1131"/>
         </scene>
         <!--Repository View Controller-->
         <scene sceneID="ZXi-R4-Nv6">

@@ -20,15 +20,29 @@ class GithubServices {
         if let error = error{
           println("error: \(error)")
         }else if let httpResponse = response as? NSHTTPURLResponse{
-          println("response assignation successful: \(httpResponse.statusCode)")
-
          let Repo = GithubJSONParser.repositoryFromJSONData(data)
-
           completionHandler(Repo!)
-          
         }
       }).resume()
     }
-
+  }
+  
+  class func usersForSearchTerm(searchTerm : String, completionHandler:([Users])->(Void)){
+    
+    let baseURL = "https://api.github.com/search/users"
+    let finalURL = baseURL + "?q=\(searchTerm)"
+    
+    if let url = NSURL(string: finalURL){
+      NSURLSession.sharedSession().dataTaskWithURL(url, completionHandler: { (data, response, error) -> Void in
+        if let error = error{
+          println("error:\(error)")
+        }else
+          if let httpResponse = response as? NSHTTPURLResponse{
+            println(httpResponse)
+            let users = GithubJSONParser.usersFromJSONParserData(data)
+            completionHandler(users!)
+        }
+      }).resume()
+    }
   }
 }
