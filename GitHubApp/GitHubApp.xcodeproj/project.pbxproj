@@ -23,6 +23,9 @@
 		AE267F821B83959100309A37 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE267F811B83959100309A37 /* ViewController.swift */; };
 		AE32EFC01B839A6E00A5ED46 /* GithubJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32EFBF1B839A6E00A5ED46 /* GithubJSONParser.swift */; };
 		AE32EFC21B839B5700A5ED46 /* Repositories.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE32EFC11B839B5700A5ED46 /* Repositories.swift */; };
+		AE619A861B8A2C8900232F11 /* ToUserDetailAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE619A851B8A2C8900232F11 /* ToUserDetailAnimationController.swift */; };
+		AE619A8B1B8A736D00232F11 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE619A8A1B8A736D00232F11 /* Extension.swift */; };
+		AE619A8D1B8A740500232F11 /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AE619A8C1B8A740500232F11 /* WebViewController.swift */; };
 		AED5EC511B87FD6E009AB96A /* DetailedUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AED5EC501B87FD6E009AB96A /* DetailedUserViewController.swift */; };
 		AEEDB1711B86A3DC00CAF40E /* UserSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEDB1701B86A3DC00CAF40E /* UserSearchViewController.swift */; };
 		AEEDB1731B86A44600CAF40E /* UserCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AEEDB1721B86A44600CAF40E /* UserCollectionViewCell.swift */; };
@@ -60,6 +63,9 @@
 		AE267F811B83959100309A37 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AE32EFBF1B839A6E00A5ED46 /* GithubJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GithubJSONParser.swift; sourceTree = "<group>"; };
 		AE32EFC11B839B5700A5ED46 /* Repositories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Repositories.swift; sourceTree = "<group>"; };
+		AE619A851B8A2C8900232F11 /* ToUserDetailAnimationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ToUserDetailAnimationController.swift; sourceTree = "<group>"; };
+		AE619A8A1B8A736D00232F11 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		AE619A8C1B8A740500232F11 /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebViewController.swift; sourceTree = "<group>"; };
 		AED5EC501B87FD6E009AB96A /* DetailedUserViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailedUserViewController.swift; sourceTree = "<group>"; };
 		AEEDB1701B86A3DC00CAF40E /* UserSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserSearchViewController.swift; sourceTree = "<group>"; };
 		AEEDB1721B86A44600CAF40E /* UserCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -110,8 +116,11 @@
 				AE267F571B82FBEA00309A37 /* Main.storyboard */,
 				AE32EFBF1B839A6E00A5ED46 /* GithubJSONParser.swift */,
 				AEEDB1701B86A3DC00CAF40E /* UserSearchViewController.swift */,
+				AE619A8C1B8A740500232F11 /* WebViewController.swift */,
+				AE619A8A1B8A736D00232F11 /* Extension.swift */,
 				AE32EFC11B839B5700A5ED46 /* Repositories.swift */,
 				AE267F7B1B838B1A00309A37 /* RepositoryViewController.swift */,
+				AE619A851B8A2C8900232F11 /* ToUserDetailAnimationController.swift */,
 				AEF761421B87ABF0000E096E /* ImageResizer.swift */,
 				AEEDB1721B86A44600CAF40E /* UserCollectionViewCell.swift */,
 				AE1D567F1B85026800E22404 /* TableViewCell.swift */,
@@ -254,6 +263,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AE619A8D1B8A740500232F11 /* WebViewController.swift in Sources */,
 				AE267F821B83959100309A37 /* ViewController.swift in Sources */,
 				AEEDB1711B86A3DC00CAF40E /* UserSearchViewController.swift in Sources */,
 				AE267F541B82FBEA00309A37 /* AppDelegate.swift in Sources */,
@@ -263,9 +273,11 @@
 				AE10B2A91B86F06C00BCA2D7 /* Users.swift in Sources */,
 				AEF761431B87ABF0000E096E /* ImageResizer.swift in Sources */,
 				AE1D56801B85026800E22404 /* TableViewCell.swift in Sources */,
+				AE619A8B1B8A736D00232F11 /* Extension.swift in Sources */,
 				AE267F7C1B838B1A00309A37 /* RepositoryViewController.swift in Sources */,
 				AED5EC511B87FD6E009AB96A /* DetailedUserViewController.swift in Sources */,
 				AE0E1EFA1B86371700A20E07 /* KeyChainService.swift in Sources */,
+				AE619A861B8A2C8900232F11 /* ToUserDetailAnimationController.swift in Sources */,
 				AE32EFC01B839A6E00A5ED46 /* GithubJSONParser.swift in Sources */,
 				AE1D567E1B84CD2000E22404 /* Taylor.swift in Sources */,
 				AE32EFC21B839B5700A5ED46 /* Repositories.swift in Sources */,

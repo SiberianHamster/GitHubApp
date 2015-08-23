@@ -22,10 +22,22 @@ class UserSearchViewController: UIViewController {
       
       UserSearchBar.delegate = self
       userCollection.dataSource = self
-      userCollection.delegate = self
+//      userCollection.delegate = self
       
       // Do any additional setup after loading the view.
     }
+  
+  override func viewWillAppear(animated: Bool) {
+    super.viewWillAppear(animated)
+    navigationController?.delegate = self
+    
+  }
+  
+  override func viewWillDisappear(animated: Bool) {
+    super.viewWillDisappear(animated)
+
+    navigationController?.delegate = nil
+  }
   
   override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
     if segue.identifier == "detailedUserSegue" {
@@ -34,6 +46,7 @@ class UserSearchViewController: UIViewController {
         let selectedUser = userCollection.indexPathsForSelectedItems().first as! NSIndexPath
         let passedUser = usersItems[selectedUser.item]
         destinationViewController.selectedUser = passedUser
+
       
   }
   }
@@ -89,6 +102,16 @@ extension UserSearchViewController: UICollectionViewDataSource{
     }
 }
 
+extension UserSearchViewController: UINavigationControllerDelegate{
+  func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    
+    
+    return toVC is DetailedUserViewController ? ToUserDetailAnimationController() : nil
+    
+  }
+
+}
+
 extension UserSearchViewController: UICollectionViewDelegate{
 }
 
@@ -109,6 +132,11 @@ extension UserSearchViewController: UISearchBarDelegate{
       
       
     })
+    
+  }
+  func searchBar(searchBar: UISearchBar, shouldChangeTextInRange range: NSRange, replacementText text: String) -> Bool {
+    
+    return text.validateForURL()
     
   }
 

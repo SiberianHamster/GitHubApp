@@ -22,7 +22,8 @@ class RepositoryViewController: ViewController {
       
         SearchBar.delegate = self
         repoTable.dataSource = self
-        repoTable.delegate = self
+//        repoTable.delegate = self
+      navigationController?.delegate = self
       
       
 
@@ -53,9 +54,12 @@ extension RepositoryViewController: UITableViewDataSource{
   
 }
 
-//Mark: RepositoryViewController TableViewDelegate
-extension RepositoryViewController: UITableViewDelegate{
-}
+////Mark: RepositoryViewController TableViewDelegate
+//extension RepositoryViewController: UITableViewDelegate{
+//  func navigationController(navigationController: UINavigationController, animationControllerForOperation operation: UINavigationControllerOperation, fromViewController fromVC: UIViewController, toViewController toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+//        return toVC is DetailedUserViewController ? ToUserDetailAnimationController() : nil
+//  }
+//}
 
 //Mark: RepositoryViewController SearchBarDelegate
 extension RepositoryViewController: UISearchBarDelegate{
@@ -75,4 +79,9 @@ extension RepositoryViewController: UISearchBarDelegate{
       })
 
 }
+}
+
+//Mark: RepositoryViewController NavigationControllerDelegate
+extension RepositoryViewController: UINavigationControllerDelegate{
+  
 }
