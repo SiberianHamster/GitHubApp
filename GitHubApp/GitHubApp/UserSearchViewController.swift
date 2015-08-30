@@ -62,6 +62,7 @@ extension UserSearchViewController: UICollectionViewDataSource{
   
   func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
     let cell = userCollection.dequeueReusableCellWithReuseIdentifier("Cell", forIndexPath: indexPath) as! UserCollectionViewCell
+    cell.image.image = nil
     cell.tag++
     let tag = cell.tag
     var users = usersItems[indexPath.row]

@@ -41,7 +41,7 @@ extension ToUserDetailAnimationController: UIViewControllerAnimatedTransitioning
         
         toVC.image.hidden = true
         toVC.userName.hidden = true
-        
+        toVC.view.layoutIfNeeded()
         let destinationFrame = toVC.image.frame
         println("destination \(destinationFrame)")
         
